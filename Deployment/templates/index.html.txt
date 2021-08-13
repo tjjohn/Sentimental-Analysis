@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Document</title>
+</head>
+
+<body>
+<div class="content">
+    <div style="color:blue">
+        <form action="{{ url_for('predict')}}" method="post">
+        
+            <h1 style="text-align: center">Sentimental Analysis of Reviews</h1>
+            
+            
+            <div class="form">
+            
+            <h3>Division Name</h3><select name="Division" id="Division" required="required">
+                <option value="General">General</option>
+                <option value="Initmates">Initmates</option>
+            </select>
+            
+            <h3>Department Name</h3><select name="Dept_Name" id="Dept_Name" required="required">
+                <option value="Bottoms">Bottoms</option>
+                <option value="Dresses">Dresses</option>
+                <option value="Intimate">Intimate</option>
+                <option value="Jackets">Jackets</option>
+                <option value="Tops">Tops</option>
+                <option value="Trend">Trend</option>
+            </select>
+            
+            <h3>Class Name</h3><select name="Class_Name" id="Class_Name" required="required">
+                <option value="Blouses">Blouses</option>
+                <option value="Dresses">Dresses</option>
+                <option value="Fine gauge">Fine_gauge</option>
+                <option value="Intimates">Intimates</option>
+                <option value="Jackets">Jackets</option>
+                <option value="Jeans">Jeans</option>
+                <option value="Knits">Knits</option>
+                <option value="Layering">Layering</option>
+                <option value="Legwear">Legwear</option>
+                <option value="Lounge">Lounge</option>
+                <option value="Pants">Pants</option>
+                <option value="Shorts">Shorts</option>
+                <option value="Skirts">Skirts</option>
+                <option value="Sleep">Sleep</option>
+                <option value="Sweaters">Sweaters</option>
+                <option value="Swim">Swim</option>
+                <option value="Trend">Trend</option>
+            </select>
+        
+            
+            
+    
+            <h3>Age</h3><input id="Age" name="Age" type="number ">
+            
+            <h3>Positive Feedback Count</h3><input id="pfc" name="pfc" type="number ">
+            
+            <p>Review</p>
+        	<!-- <input type="text" name="Review"/> -->
+    		<textarea name="Review" rows="6" cols="50"></textarea>
+            
+            
+            <br><br><br><br><br><button id="sub" type="submit ">Predict</button>
+            <br>
+
+
+
+
+        </form>
+
+
+
+        <br><br><h3>{{ prediction_text }}<h3>
+    </div>
+</div>
+ </div>
+ <style>
+body {
+
+            text-align: center;
+            padding: 0px;
+        }
+
+        #research {
+            font-size: 18px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+
+        #fuel {
+            width: 83px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+
+        #fuel:hover {
+            background-color: coral;
+        }
+
+        #research {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
+        #research:hover {
+            background-color: coral;
+        }
+
+        #resea {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
+        #resea:hover {
+            background-color: coral;
+        }
+
+        #sub {
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+
+        #sub:hover {
+            background-color: darkcyan;
+        }
+
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #Age {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #pfc {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        #Review {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+      
+    </style>
+
+
+</body>
+
+</html>
+
